@@ -1,7 +1,6 @@
 const callToApiWeather = async (lat, lng) => {
-  const token = "aa78c8ca55c792312fec83946f85e533";
   return await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${token}&units=metric&lang=es`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${process.env.REACT_APP_API_WEATHER_KEY}&units=metric&lang=es`
   )
     .then((response) => response.json())
     .then((dataApi) => {

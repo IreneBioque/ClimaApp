@@ -1,8 +1,6 @@
 const callToApiCity = async (searchName) => {
-  const token =
-    "pk.eyJ1IjoidHJ5YXZuYSIsImEiOiJjbDFrbHhpbzYwMjRjM2Vtb29uc3owMG96In0.2Q9xtnNggTkzP9gjTyhMMg";
   return await fetch(
-    `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchName}.json?proximity=ip&types=place%2Cpostcode%2Caddress&language=es&access_token=${token}`
+    `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchName}.json?proximity=ip&types=place%2Cpostcode%2Caddress&language=es&access_token=${process.env.REACT_APP_API_CITY_KEY}`
   )
     .then((response) => response.json())
     .then((dataApi) => {
