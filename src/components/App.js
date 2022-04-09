@@ -3,7 +3,6 @@ import callToApiCity from "../services/apiCity";
 import Footer from "./Footer";
 import Header from "./Header";
 import Landing from "./Landing";
-import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [city, setCity] = useState([]);
   const [searchName, setSearchName] = useState("");

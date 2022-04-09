@@ -1,4 +1,7 @@
 import PropTypes from "prop-types";
+import TextField from "@mui/material/TextField";
+import * as React from "react";
+import InputLabel from "@mui/material/InputLabel";
 
 const FilterByName = (props) => {
   const handleInputChange = (ev) => {
@@ -7,13 +10,13 @@ const FilterByName = (props) => {
 
   return (
     <>
-      <label htmlFor="name" className="form__label">
+      <InputLabel htmlFor="city">
         Buscar ciudad
-      </label>
-      <input
+      </InputLabel>
+      <TextField
         className="form__input"
-        name="name"
-        id="name"
+        name="city"
+        id="city"
         placeholder="Buscar ciudad"
         value={props.valueSearchName}
         onChange={handleInputChange}
