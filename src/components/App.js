@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import callToApiCity from "../services/apiCity";
+import { callToApiCity } from "../services/apiCity";
 import Footer from "./Footer";
 import Header from "./Header";
 import Landing from "./Landing";
