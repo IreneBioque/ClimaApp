@@ -16,7 +16,7 @@ const CityCard = (props) => {
       <ul>
         {" "}
         <li key={city.id}>
-          <Card onClick={() => showModal()}>
+          <Card >
             <CardContent>
               <Typography variant="h5" component="div">
                 {city.name}
@@ -25,7 +25,7 @@ const CityCard = (props) => {
                 src={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${city.lng},${city.lat},13,20/400x400?access_token=${process.env.REACT_APP_API_CITY_KEY}`}
                 alt="image_city"
               />
-              {/* <Button onClick={() => showModal()}>Ver el tiempo</Button> */}
+              <Button onClick={() => showModal()}>Ver el tiempo</Button> 
             </CardContent>
           </Card>
         </li>
