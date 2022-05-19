@@ -1,18 +1,18 @@
-import FilterByName from "./FIlterByName";
+import FilterByName from "./Filters/FIlterByName";
+import { FormGroup } from "@mui/material";
+
 
 const Form = (props) => {
    const handleFormSubmit = (ev) => {
      ev.preventDefault();
    };
   return (
-    <>
-      <form onSubmit={handleFormSubmit}>
-        <FilterByName
-          handleSearchName={props.handleSearchName}
-          valueSearchName={props.valueSearchName}
-        />
-      </form>
-    </>
+    <FormGroup onSubmit={handleFormSubmit}>
+      <FilterByName
+        handleSearchName={props.handleSearchName}
+        valueSearchName={props.valueSearchName}
+      />
+    </FormGroup>
   );
 };
 

@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
-import TextField from "@mui/material/TextField";
 import * as React from "react";
-import InputLabel from "@mui/material/InputLabel";
+import { StyledInput } from "./styles";
 
 const FilterByName = (props) => {
   const handleInputChange = (ev) => {
@@ -9,19 +8,15 @@ const FilterByName = (props) => {
   };
 
   return (
-    <>
-      <InputLabel htmlFor="city">
-        Buscar ciudad
-      </InputLabel>
-      <TextField
+      <StyledInput
         className="form__input"
         name="city"
         id="city"
+        label="Buscar ciudad"
         placeholder="Buscar ciudad"
         value={props.valueSearchName}
         onChange={handleInputChange}
       />
-    </>
   );
 };
 FilterByName.defaultProps = {

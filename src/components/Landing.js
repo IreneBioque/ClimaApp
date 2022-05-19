@@ -1,4 +1,4 @@
-import CityList from "./CityList";
+import CityList from "./CardList";
 import Form from "./Form";
 
 const Landing = (props) => {
