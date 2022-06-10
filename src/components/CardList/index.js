@@ -17,7 +17,8 @@ const CityList = (props) => {
           <StyledCard>
             <Typography variant="h5">Bienvenido a ClimaApp</Typography>
             <Typography variant="body1">
-              Para empezar a usar esta aplicación escriba un nombre
+              Para empezar a usar esta aplicación escriba un nombre de la ciudad
+              de la que quiere conocer el tiempo
             </Typography>
           </StyledCard>
           <Animation />

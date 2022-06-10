@@ -51,11 +51,13 @@ function App() {
           handleChange={handleChange}
           check={check}
         />
-        <Landing
-          valueSearchName={searchName}
-          handleSearchName={handleSearchName}
-          data={city}
-        />
+        <main style={{ height: city ? "" : "85vh" }}>
+          <Landing
+            valueSearchName={searchName}
+            handleSearchName={handleSearchName}
+            data={city}
+          />
+        </main>
         <Footer />
       </ThemeProvider>
     </>

@@ -19,10 +19,12 @@ const style = {
 };
 
 const ModalCity = (props) => {
+ 
   return (
     <div>
       {/* <Button onClick={handleOpen}>Open modal</Button> */}
       <Modal
+        role={"modal"}
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         open={props.show}
