@@ -65,7 +65,6 @@ describe("App components", () => {
       userEvent.click(element);
       const modal = await screen.findByRole("modal");
       expect(modal).toBeInTheDocument();
-      //screen.debug();
       const descriptionModal = await screen.findByText(/descripción/i);
       expect(descriptionModal).toBeInTheDocument();
     });
