@@ -1,13 +1,18 @@
+import { response } from "msw";
+import { FunctionComponent, ReactFragment } from "react";
 import { useEffect, useState } from "react";
 import callToApiWeather from "../services/apiWeather";
 
-const InfoWeather = (props) => {
-  const { data } = props;
+const InfoWeather = ({data}) => {
   const [weather, setWeather] = useState([]);
   useEffect(() => {
-    callToApiWeather(data.lat, data.lng).then((response) => {
-      setWeather(response);
-    });
+    const consultaAPI = async () => {
+      const consulta = await callToApiWeather(data.lat, data.lng);
+
+      setWeather(consulta);
+    };
+
+    consultaAPI();
   }, []);
   console.log("W", weather, data.lat, data.lng);
   return (

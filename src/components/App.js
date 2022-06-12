@@ -36,11 +36,14 @@ function App() {
   const handleSearchName = (value) => {
     setSearchName(value);
   };
-  useEffect(() => {
-    callToApiCity(searchName).then((response) => {
-      setCity(response);
-    });
-  }, [searchName]);
+ useEffect(() => {
+  const  asyncCall = async () => {
+   callToApiCity(searchName).then((response) => {
+     setCity(response);
+   });
+  }
+asyncCall();
+ }, [searchName]);
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -56,6 +59,7 @@ function App() {
             valueSearchName={searchName}
             handleSearchName={handleSearchName}
             data={city}
+            setCity={setCity}
           />
         </main>
         <Footer />

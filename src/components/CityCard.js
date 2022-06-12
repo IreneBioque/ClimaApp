@@ -14,8 +14,8 @@ const CityCard = (props) => {
   return (
     <>
       {" "}
-      <li key={city.id}>
-        <Card onClick={() => showModal()}>
+      <li key={city.id} role="Cardcity" onClick={() => showModal()}>
+        <Card>
           <CardContent>
             <Typography variant="h5" component="div">
               {city.name}
@@ -34,7 +34,12 @@ const CityCard = (props) => {
           </CardContent>
         </Card>
       </li>
-      <ModalCity show={show} closeModal={closeModal} data={city} />
+      <ModalCity
+        show={show}
+        onClose={closeModal}
+        data={city}
+        name={city.name}
+      />
     </>
   );
 };

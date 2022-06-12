@@ -1,3 +1,4 @@
+import { FunctionComponent } from "react";
 import CityList from "./CardList";
 import Form from "./Form";
 
@@ -7,8 +8,9 @@ const Landing = (props) => {
       <Form
         handleSearchName={props.handleSearchName}
         valueSearchName={props.valueSearchName}
+        setCity={props.setCity}
       />
-      <CityList data={props.data}/>
+      <CityList data={props.data} />
     </>
   );
 };

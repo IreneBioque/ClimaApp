@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Fade from "@mui/material/Fade";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
-import * as React from "react";
+import { FunctionComponent } from "react";
 import InfoWeather from "./InfoWeather";
 
 const style = {
@@ -18,30 +18,29 @@ const style = {
   p: 4,
 };
 
-const ModalCity = (props) => {
- 
+
+const ModalCity = ({ data, name, show, onClose }) => {
   return (
     <div>
-      {/* <Button onClick={handleOpen}>Open modal</Button> */}
       <Modal
         role={"modal"}
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        open={props.show}
-        onClose={props.closeModal}
+        open={show}
+        onClose={onClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
         }}
       >
-        <Fade in={props.show}>
+        <Fade in={show}>
           <Box sx={style}>
             <Typography id="transition-modal-title" variant="h6" component="h2">
-              <h1 className="modal__ModalTitle">{props.data.name}</h1>
+              <h1 className="modal__ModalTitle">{name}</h1>
             </Typography>
             <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              <InfoWeather data={props.data} />
+              <InfoWeather data={data} />
             </Typography>
           </Box>
         </Fade>

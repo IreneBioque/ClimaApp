@@ -28,6 +28,7 @@ const Header = (props) => {
                       checked={props.check}
                       onChange={props.handleChange}
                       aria-label="login switch"
+                      role={"switch"}
                     />
                   }
                   label={props.check ? <LightModeIcon /> : <DarkModeIcon />}
