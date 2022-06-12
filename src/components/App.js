@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import { callToApiCity } from "../services/apiCity";
 import Footer from "./Footer/index";
 import Header from "./Header/index";
-import Landing from "./Landing";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { Card, Typography } from "@mui/material";
+import Animation from "./Animation";
+import CityCard from "./CityCard";
+import Form from "./Form";
+import { StyledCard, StyledList } from "./styles";
 
 const darkTheme = createTheme({
   palette: {
@@ -44,6 +48,9 @@ function App() {
   }
 asyncCall();
  }, [searchName]);
+   const list = city.map((city) => {
+     return <CityCard city={city} key={city.id} />;
+   });
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -55,12 +62,27 @@ asyncCall();
           check={check}
         />
         <main style={{ height: city ? "" : "85vh" }}>
-          <Landing
-            valueSearchName={searchName}
+          <Form
             handleSearchName={handleSearchName}
-            data={city}
+            valueSearchName={searchName}
             setCity={setCity}
           />
+          <StyledList>
+            {city.length !== 0 ? (
+              <ul className="cityList">{list}</ul>
+            ) : (
+              <Card>
+                <StyledCard>
+                  <Typography variant="h5">Bienvenido a ClimaApp</Typography>
+                  <Typography variant="body1">
+                    Para empezar a usar esta aplicación escriba un nombre de la
+                    ciudad de la que quiere conocer el tiempo
+                  </Typography>
+                </StyledCard>
+                <Animation />
+              </Card>
+            )}
+          </StyledList>
         </main>
         <Footer />
       </ThemeProvider>
